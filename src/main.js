@@ -33,5 +33,5 @@ const store = createStore({
 });
 
 const app = createApp(App);
-app.mount("#app");
 app.use(store);
+app.mount("#app");
