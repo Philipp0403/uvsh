@@ -1,28 +1,28 @@
-<template>
-  <div id="app">
-    <img src="./assets/logo.png">
-    <HelloWorld msg="Hello World!"/>
-  </div>
-</template>
+<script setup>
+import { ref, computed } from 'vue'
+import HomePage from './views/HomePage.vue'
+import ImpressumPage from './views/ImpressumPage.vue'
+import NotFound from './views/NotFound.vue'
 
-<script>
-import HelloWorld from './components/HelloWorld.vue'
-
-export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  }
+const routes = {
+  '/': HomePage,
+  '/impressum': ImpressumPage
 }
+
+const currentPath = ref(window.location.hash)
+
+window.addEventListener('hashchange', () => {
+  currentPath.value = window.location.hash
+})
+
+const currentView = computed(() => {
+  return routes[currentPath.value.slice(1) || '/'] || NotFound
+})
 </script>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
+<template>
+  <a href="#/">HomePage</a> |
+  <a href="#/impressum">ImpressumPage</a> |
+  <a href="#/non-existent-path">Broken Link</a>
+  <component :is="currentView" />
+</template>
