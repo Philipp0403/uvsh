@@ -3,11 +3,10 @@
     <div class="container-fluid">
       <a class="navbar-brand" href="#/">
         <img
-          src="/docs/5.3/assets/brand/bootstrap-logo.svg"
+          src="../assets/UniLuebeck.png"
           alt="Logo"
-          width="30"
-          height="24"
-          class="d-inline-block align-text-top"
+          width="50"
+          class="d-inline-block align-items-center"
         />
         Vergleich Universitäten
       </a>
