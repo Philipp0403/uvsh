@@ -4,7 +4,6 @@
     <div class="content">
       <SteckbriefComponent></SteckbriefComponent>
       <balken-diagram></balken-diagram>
-      <button type="button" class="btn btn-primary">Base class</button>
     </div>
     <FooterComponent></FooterComponent>
   </div>
@@ -35,6 +34,5 @@ export default {
 }
 .content {
   display: flex;
-  align-items: stretch;
 }
 </style>
