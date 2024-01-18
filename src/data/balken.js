@@ -1,4 +1,4 @@
-export const balkenData = () => ({
+export const data = {
     labels: [
         'UzL',
         'CAU',
@@ -15,7 +15,7 @@ export const balkenData = () => ({
             ]
         }
     ]
-})
+}
 
 export const options = {
     responsive: true,
