@@ -1,33 +1,40 @@
 <template>
-    <top-view></top-view>
-    <div>
+  <div class="wrapper">
+    <TopView></TopView>
+    <div class="content">
       <SteckbriefComponent></SteckbriefComponent>
       <balken-diagram></balken-diagram>
+      <button type="button" class="btn btn-primary">Base class</button>
     </div>
     <FooterComponent></FooterComponent>
+  </div>
 </template>
 
 <script>
-import TopView from '@/components/TopView.vue';
-import BalkenDiagram from '@/components/BalkenDiagram.vue';
-import FooterComponent from '../components/FooterComponent.vue';
-import SteckbriefComponent from '../components/SteckbriefComponent.vue';
+import BalkenDiagram from "@/components/BalkenDiagram.vue";
+import FooterComponent from "../components/FooterComponent.vue";
+import SteckbriefComponent from "../components/SteckbriefComponent.vue";
+import TopView from "../components/TopView.vue";
 export default {
   components: {
-    TopView,
     FooterComponent,
     BalkenDiagram,
     SteckbriefComponent,
-  }
-}
+    TopView,
+  },
+};
 </script>
 
-
 <style scoped>
-  div {
-    display: flex;
-    flex-direction: row;
-    height: 100%;
-  }
-
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100vh;
+  padding: 1rem;
+}
+.content {
+  display: flex;
+  align-items: stretch;
+}
 </style>
