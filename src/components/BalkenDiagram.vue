@@ -1,6 +1,6 @@
 <template>
     <div>
-
+        <p></p>
     </div>
 </template>
 
@@ -13,9 +13,10 @@
 <style scoped>
 div {
     width: 65rem;
-    border: 15px solid black;
-    padding: 50px;
-    margin: 20px;
+    height: 35rem;
+    border: 1rem solid black;
+    padding: 1rem;
+    margin: 1rem;
     float: right;
 }
 </style>
