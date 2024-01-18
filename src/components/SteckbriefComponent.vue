@@ -16,9 +16,9 @@ export default {
 #container {
     display: flex;
     background-color: rgb(191, 131, 223);
-    width: 30rem;
-    padding: 50px;
-    margin: 1rem;
+    width: 30%;
+    padding: 2%;
+    margin: 3%;
 };
 
 

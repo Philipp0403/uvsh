@@ -17,12 +17,10 @@ export default {
 #colouredBox {
     display: flex;
     background-color: black;
-    height: 3rem;
+    height: 5%;
     width: 100%;
     align-items: center;
     justify-content: space-evenly;
-    position: absolute;
-    bottom: 0px;
 };
 
 

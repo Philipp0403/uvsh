@@ -12,11 +12,10 @@
 
 <style scoped>
 div {
-    width: 65rem;
-    height: 35rem;
-    border: 1rem solid black;
-    padding: 1rem;
-    margin: 1rem;
+    width: 65%;
+    border: 2px solid black;
+    padding: 2%;
+    margin: 3%;
     float: right;
 }
 </style>
