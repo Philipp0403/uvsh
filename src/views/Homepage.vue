@@ -1,9 +1,10 @@
 <template>
     <top-view></top-view>
     <body>
+      <SteckbriefComponent></SteckbriefComponent>
       <balken-diagram></balken-diagram>
-      <FooterComponent></FooterComponent>
     </body>
+    <FooterComponent></FooterComponent>
     
 </template>
 
@@ -11,11 +12,13 @@
 import TopView from '@/components/TopView.vue'
 import BalkenDiagram from '@/components/BalkenDiagram.vue'
 import FooterComponent from '../components/FooterComponent.vue';
+import SteckbriefComponent from '../components/SteckbriefComponent.vue'
 export default {
   components: {
     TopView,
     FooterComponent,
-    BalkenDiagram
+    BalkenDiagram,
+    SteckbriefComponent,
   }
 }
 </script>
@@ -24,7 +27,7 @@ export default {
 <style scoped>
   body {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     height: 100%;
   }
 
