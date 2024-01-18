@@ -1,7 +1,7 @@
 <template>
   <div id="container">
     <h1>Information</h1>
-    <p>
+    <p v-if="uzl">
       Diese Website soll dazu dienen, die Ausgaben und Einnahmen verschiedener
       Universitäten zu vergleichen und anhand einzelner Positionen
       aufzuschlüsseln. Um Daten für die Universität zu Lübeck, Universität Kiel
@@ -13,7 +13,12 @@
     <button v-on:click="changeUzl()" type="button" class="btn btn-primary">
       Uni Lübeck
     </button>
-    <div v-if="uzl">EYOOO LÜBECK ALLA</div>
+
+    <div class="circles">
+      <svg>
+        <circle :r="3" :fill="red" @click="changeColor(index)"></circle>
+      </svg>
+    </div>
   </div>
 </template>
 
@@ -41,6 +46,10 @@ export default {
   width: 30%;
   padding: 1rem;
   margin: 1rem;
+}
+
+.circles {
+  margin: 10px;
 }
 
 p {
