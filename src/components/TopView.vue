@@ -1,6 +1,6 @@
 <template>
     <header>
-        <h1>Vergleich Universitäten Schleswig-Holstein</h1>
+        <a href="#/">Vergleich Universitäten Schleswig-Holstein</a>
     </header>
 </template>
 
@@ -13,9 +13,15 @@
 <style scoped>
 header {
     background-color: #9719eb;
-    height: 12rem;
+    height: 6rem;
     padding: 2rem;
     display: flex;
-    align-items: flex-end;
+    align-items: center;
+}
+
+a {
+    font-size: 2em;
+    color: black;
+    text-decoration: none;
 }
 </style>
