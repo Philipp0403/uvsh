@@ -1,7 +1,9 @@
 <template>
   <div id="colouredBox">
     <a href="#/impressum">Impressum</a>
-    <a href="#/">Datenschutzerklärung</a>
+    <a href="#/datenschutzerklaerung">Datenschutzerklärung</a>
+    <a href="#/kontakt">Kontakt</a>
+    <a href="#/barrierefreiheit">Barrierefreiheit</a>
   </div>
 </template>
 
