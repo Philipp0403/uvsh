@@ -32,7 +32,7 @@
         <button
           v-on:click="changeUzl()"
           type="button"
-          class="btn btn-outline-primary .btn-lg"
+          class="btn btn-primary .btn-lg"
           id="btnUZL"
         >
           UzL
@@ -40,7 +40,7 @@
         <button
           v-on:click="changeEUF()"
           type="button"
-          class="btn btn-outline-primary"
+          class="btn btn-primary"
           id="btnEUF"
         >
           EUF
@@ -48,7 +48,7 @@
         <button
           v-on:click="changeCAU()"
           type="button"
-          class="btn btn-outline-primary"
+          class="btn btn-primary"
           id="btnCAU"
         >
           CAU
@@ -62,6 +62,7 @@
         id="my-chart-id"
         :options="options"
         :data="balkenData"
+        ref="bar"
       />
       <Line v-if="!balken" :options="options" :data="lineData" />
     </div>
@@ -128,6 +129,8 @@ ChartJS.register(
   LineElement
 );
 
+var uzlData = [];
+
 export default {
   name: "BalkenDiagram",
   components: { Bar, Line },
@@ -161,7 +164,7 @@ export default {
     },
     balkenData() {
       return {
-        labels: ["UzL", "CAU", "EUF"],
+        labels: ["UzL", "EUF", "CAU"],
         datasets: [
           {
             label: "Landeszuschuss zu Betriebskosten",
@@ -347,16 +350,33 @@ export default {
     },
     changeUzl() {
       this.$store.commit("toggleUzl");
-      // Toggle Color
-      // document.getElementById("btnUZL").style.backgroundColor == "red"? document.getElementById("btnUZL").style.backgroundColor = "blue":document.getElementById("btnUZL").style.backgroundColor="red"
+      const ChartInstance = this.$refs.bar.chart;
       if (this.uzl) {
         document
           .getElementById("btnUZL")
           .classList.remove("btn-outline-primary");
         document.getElementById("btnUZL").classList.add("btn-primary");
+        if (this.balken) {
+          for (var i = 0; i < this.balkenData.datasets.length; i++) {
+            this.balkenData.datasets[i].data.push(uzlData[i]);
+          }
+          this.balkenData.labels.push("UzL");
+          uzlData = [];
+          ChartInstance.update();
+        }
       } else {
         document.getElementById("btnUZL").classList.remove("btn-primary");
         document.getElementById("btnUZL").classList.add("btn-outline-primary");
+        if (this.balken) {
+          var uzlIndex = this.balkenData.labels.indexOf("UzL");
+          for (i = 0; i < this.balkenData.datasets.length; i++) {
+            uzlData.push(this.balkenData.datasets[i].data[uzlIndex]);
+            this.balkenData.datasets[i].data.splice(uzlIndex, 1);
+          }
+          this.balkenData.labels.splice(uzlIndex, 1);
+          ChartInstance.update();
+          console.log(uzlData);
+        }
       }
     },
     changeCAU() {
@@ -370,6 +390,20 @@ export default {
       } else {
         document.getElementById("btnCAU").classList.remove("btn-primary");
         document.getElementById("btnCAU").classList.add("btn-outline-primary");
+        if (this.balken) {
+          for (var i = 0; i < this.balkenData.datasets.length; i++) {
+            this.balkenData.datasets[i].data.splice(
+              this.balkenData.labels.indexOf("CAU"),
+              1
+            );
+          }
+          this.balkenData.labels.splice(
+            this.balkenData.labels.indexOf("CAU"),
+            1
+          );
+          const ChartInstance = this.$refs.bar.chart;
+          ChartInstance.update();
+        }
       }
     },
     changeEUF() {
@@ -383,7 +417,30 @@ export default {
       } else {
         document.getElementById("btnEUF").classList.remove("btn-primary");
         document.getElementById("btnEUF").classList.add("btn-outline-primary");
+        if (this.balken) {
+          for (var i = 0; i < this.balkenData.datasets.length; i++) {
+            this.balkenData.datasets[i].data.splice(
+              this.balkenData.labels.indexOf("EUF"),
+              1
+            );
+          }
+          this.balkenData.labels.splice(
+            this.balkenData.labels.indexOf("EUF"),
+            1
+          );
+          const ChartInstance = this.$refs.bar.chart;
+          ChartInstance.update();
+        } else {
+          for (i = 0; i < this.lineData.datasets.length; i++) {
+            this.lineData.datasets;
+          }
+        }
       }
+    },
+  },
+  watch: {
+    chartData: function () {
+      this.renderChart(this.balkenData, this.options);
     },
   },
 };
