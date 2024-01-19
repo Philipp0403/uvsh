@@ -224,7 +224,7 @@
     </p>
 
     <div class=".d-flex">
-      <button v-on:click="changeUzl()" type="button" class="btn btn-outline-primary" id="btnUZL">
+      <button v-on:click="changeUzl()" type="button" class="btn btn-outline-primary .btn-lg" id="btnUZL">
         UzL
       </button>
       <button v-on:click="changeEUF()" type="button" class="btn btn-outline-primary" id="btnEUF">
