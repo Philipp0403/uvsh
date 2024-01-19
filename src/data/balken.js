@@ -9,7 +9,7 @@ export const data = {
     datasets: [
         {
             label: 'Landeszuschuss zu Betriebskosten',
-            backgroundColor: '#f87979',
+            backgroundColor: '#4AD66D',
             data: [
                 e,
                 20,
@@ -18,7 +18,7 @@ export const data = {
         },
         {
             label: 'Zuschüsse zur Finanzierung von Investitionen',
-            backgroundColor: '#f87979',
+            backgroundColor: '#25A244',
             data: [
                 30,
                 20,
@@ -27,7 +27,7 @@ export const data = {
         },
         {
             label: 'Drittmittel',
-            backgroundColor: '#f87979',
+            backgroundColor: '#1A7431',
             data: [
                 30,
                 20,
@@ -36,7 +36,7 @@ export const data = {
         },
         {
             label: 'Sonstige Einnahmen',
-            backgroundColor: '#f87979',
+            backgroundColor: '#00A6FB',
             data: [
                 30,
                 20,
@@ -45,7 +45,7 @@ export const data = {
         },
         {
             label: 'Nicht genauer spezifizierte Einnahmen',
-            backgroundColor: '#f87979',
+            backgroundColor: '#006494',
             data: [
                 30,
                 20,
@@ -53,8 +53,8 @@ export const data = {
             ]
         },
         {
-            label: 'Entnahme aus Rücklagen',
-            backgroundColor: '#f87979',
+            label: 'Gesamt',
+            backgroundColor: '#003554',
             data: [
                 0,
                 20,
@@ -63,7 +63,7 @@ export const data = {
         },
         {
             label: 'Sachausgaben',
-            backgroundColor: '#f87979',
+            backgroundColor: '#E87D2A',
             data: [
                 30,
                 20,
@@ -72,7 +72,7 @@ export const data = {
         },
         {
             label: 'Personalausgaben',
-            backgroundColor: '#f87979',
+            backgroundColor: '#DE6D17',
             data: [
                 30,
                 20,
@@ -81,7 +81,7 @@ export const data = {
         },
         {
             label: 'Nicht genauer spezifizierte Ausgaben',
-            backgroundColor: '#f87979',
+            backgroundColor: '#EF2B2B',
             data: [
                 30,
                 20,
@@ -89,26 +89,8 @@ export const data = {
             ]
         },
         {
-            label: 'Zuwendung',
-            backgroundColor: '#f87979',
-            data: [
-                30,
-                20,
-                10
-            ]
-        },
-        {
-            label: 'Investition bewegliche Sachen',
-            backgroundColor: '#f87979',
-            data: [
-                0,
-                20,
-                80
-            ]
-        },
-        {
-            label: 'Besondere Finanzierungsausgaben',
-            backgroundColor: '#f87979',
+            label: 'Gesamtsumme',
+            backgroundColor: '#CD0000',
             data: [
                 30,
                 20,
