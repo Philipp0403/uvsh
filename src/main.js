@@ -35,9 +35,9 @@ const store = createStore({
         state.euf = 1;
       }
     },
-    setJahr(state, value){
+    setJahr(state, value) {
       state.jahr = value;
-    }
+    },
   },
 });
 
