@@ -1,23 +1,25 @@
 <template>
-  <div>
-    <div @click="balken = !balken">Zeitverlauf</div>
-    <div class="dropdown">
-      <div>
-        <div id="currentYear" @click="dropDownOpen = !dropDownOpen">
-          {{ jahr }}
-        </div>
-        <div class="dropdown-options" v-show="dropDownOpen">
-          <div
-            v-for="aktuellesJahr in andereJahre"
-            :key="aktuellesJahr"
-            @click="selectYear(aktuellesJahr)"
-          >
-            {{ aktuellesJahr }}
+  <div id="container">
+    <div id="zeitunddrop">
+      <div @click="balken = !balken" id="diagrammwahl">{{ diagrammtyp }}</div>
+      <div class="dropdown" v-if="balken">
+        <div>
+          <div id="currentYear" @click="dropDownOpen = !dropDownOpen">
+            {{ jahr }}
+          </div>
+          <div class="dropdown-options" v-show="dropDownOpen">
+            <div
+              v-for="aktuellesJahr in andereJahre"
+              :key="aktuellesJahr"
+              @click="selectYear(aktuellesJahr)"
+            >
+              {{ aktuellesJahr }}
+            </div>
           </div>
         </div>
       </div>
     </div>
-    <div>
+    <div id="diagramme">
       <Bar
         v-if="balken"
         id="my-chart-id"
@@ -42,9 +44,41 @@ import {
   PointElement,
   LineElement,
 } from "chart.js";
-import { uzlLzB, eufLzB, cauLzB, uzlZI, eufZI, cauZI, uzlD, eufD, cauD, uzlSE, eufSE, cauSE,
-    uzlNSE, eufNSE, cauNSE, uzlGE, eufGE, cauGE, uzlSA, eufSA, cauSA, uzlPA, eufPA, cauPA,
-    uzlNSA, eufNSA, cauNSA, uzlGA, eufGA, cauGA, uzlS, eufS, cauS } from "../data/alldata.js";
+import {
+  uzlLzB,
+  eufLzB,
+  cauLzB,
+  uzlZI,
+  eufZI,
+  cauZI,
+  uzlD,
+  eufD,
+  cauD,
+  uzlSE,
+  eufSE,
+  cauSE,
+  uzlNSE,
+  eufNSE,
+  cauNSE,
+  uzlGE,
+  eufGE,
+  cauGE,
+  uzlSA,
+  eufSA,
+  cauSA,
+  uzlPA,
+  eufPA,
+  cauPA,
+  uzlNSA,
+  eufNSA,
+  cauNSA,
+  uzlGA,
+  eufGA,
+  cauGA,
+  uzlS,
+  eufS,
+  cauS,
+} from "../data/alldata.js";
 
 ChartJS.register(
   Title,
@@ -69,10 +103,16 @@ export default {
       options: {
         responsive: true,
         maintainAspectRatio: false,
+        plugins: {
+          legend: { display: true, position: "bottom" },
+        },
       },
     };
   },
   computed: {
+    diagrammtyp() {
+      return this.balken ? "Zum Zeitverlauf" : "Zum Balkendiagramm";
+    },
     balkenData() {
       return {
         labels: ["UzL", "CAU", "EUF"],
@@ -80,52 +120,92 @@ export default {
           {
             label: "Landeszuschuss zu Betriebskosten",
             backgroundColor: "#4AD66D",
-            data: [uzlLzB[this.$store.state.jahr], eufLzB[this.$store.state.jahr], cauLzB[this.$store.state.jahr]],
+            data: [
+              uzlLzB[this.$store.state.jahr],
+              eufLzB[this.$store.state.jahr],
+              cauLzB[this.$store.state.jahr],
+            ],
           },
           {
             label: "Zuschüsse zur Finanzierung von Investitionen",
             backgroundColor: "#25A244",
-            data: [uzlZI[this.$store.state.jahr], eufZI[this.$store.state.jahr], cauZI[this.$store.state.jahr]],
+            data: [
+              uzlZI[this.$store.state.jahr],
+              eufZI[this.$store.state.jahr],
+              cauZI[this.$store.state.jahr],
+            ],
           },
           {
             label: "Drittmittel",
             backgroundColor: "#1A7431",
-            data: [uzlD[this.$store.state.jahr], eufD[this.$store.state.jahr], cauD[this.$store.state.jahr]],
+            data: [
+              uzlD[this.$store.state.jahr],
+              eufD[this.$store.state.jahr],
+              cauD[this.$store.state.jahr],
+            ],
           },
           {
             label: "Sonstige Einnahmen",
             backgroundColor: "#00A6FB",
-            data: [uzlSE[this.$store.state.jahr], eufSE[this.$store.state.jahr], cauSE[this.$store.state.jahr]],
+            data: [
+              uzlSE[this.$store.state.jahr],
+              eufSE[this.$store.state.jahr],
+              cauSE[this.$store.state.jahr],
+            ],
           },
           {
             label: "Nicht genauer spezifizierte Einnahmen",
             backgroundColor: "#006494",
-            data: [uzlNSE[this.$store.state.jahr], eufNSE[this.$store.state.jahr], cauNSE[this.$store.state.jahr]],
+            data: [
+              uzlNSE[this.$store.state.jahr],
+              eufNSE[this.$store.state.jahr],
+              cauNSE[this.$store.state.jahr],
+            ],
           },
           {
             label: "Gesamt",
             backgroundColor: "#003554",
-            data: [uzlGE[this.$store.state.jahr], eufGE[this.$store.state.jahr], cauGE[this.$store.state.jahr]],
+            data: [
+              uzlGE[this.$store.state.jahr],
+              eufGE[this.$store.state.jahr],
+              cauGE[this.$store.state.jahr],
+            ],
           },
           {
             label: "Sachausgaben",
             backgroundColor: "#E87D2A",
-            data: [uzlSA[this.$store.state.jahr], eufSA[this.$store.state.jahr], cauSA[this.$store.state.jahr]],
+            data: [
+              uzlSA[this.$store.state.jahr],
+              eufSA[this.$store.state.jahr],
+              cauSA[this.$store.state.jahr],
+            ],
           },
           {
             label: "Personalausgaben",
             backgroundColor: "#DE6D17",
-            data: [uzlPA[this.$store.state.jahr], eufPA[this.$store.state.jahr], cauPA[this.$store.state.jahr]],
+            data: [
+              uzlPA[this.$store.state.jahr],
+              eufPA[this.$store.state.jahr],
+              cauPA[this.$store.state.jahr],
+            ],
           },
           {
             label: "Nicht genauer spezifizierte Ausgaben",
             backgroundColor: "#EF2B2B",
-            data: [uzlNSA[this.$store.state.jahr], eufNSA[this.$store.state.jahr], cauNSA[this.$store.state.jahr]],
+            data: [
+              uzlNSA[this.$store.state.jahr],
+              eufNSA[this.$store.state.jahr],
+              cauNSA[this.$store.state.jahr],
+            ],
           },
           {
             label: "Gesamtsumme",
             backgroundColor: "#CD0000",
-            data: [uzlGA[this.$store.state.jahr], eufGA[this.$store.state.jahr], cauGA[this.$store.state.jahr]],
+            data: [
+              uzlGA[this.$store.state.jahr],
+              eufGA[this.$store.state.jahr],
+              cauGA[this.$store.state.jahr],
+            ],
           },
         ],
       };
@@ -204,9 +284,7 @@ export default {
             label: "Studienanzahl CAU",
             backgroundColor: "#4AD66D",
             data: cauS,
-          }
-
-          ,
+          },
         ],
       };
     },
@@ -236,6 +314,7 @@ export default {
 
 .dropdown {
   position: relative;
+  width: 10%;
 }
 
 .dropdown-options {
@@ -257,6 +336,29 @@ export default {
 }
 
 .dropdown-options > div:hover {
+  background-color: #eee;
+  cursor: pointer;
+}
+
+#container {
+  height: 100%;
+  width: 58%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 1rem;
+}
+
+#diagramme {
+  height: 80%;
+}
+
+#diagrammwahl {
+  border: solid 1px black;
+  padding-left: 4px;
+}
+
+#diagrammwahl:hover {
   background-color: #eee;
   cursor: pointer;
 }

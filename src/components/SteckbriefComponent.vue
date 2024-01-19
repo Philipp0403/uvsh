@@ -296,15 +296,37 @@
       </ul>
     </div>
 
-    <p v-if="!uzl & !euf & !cau">
-      Keine Uni gewählt. Diese Website soll dazu dienen, die Ausgaben und
-      Einnahmen verschiedener Universitäten zu vergleichen und anhand einzelner
-      Positionen aufzuschlüsseln. Um Daten für die Universität zu Lübeck,
-      Universität Kiel oder für die Europauniversität Flensburg zu sehen, wählen
-      Sie bitte das entsprechende Icon für die jeweilige Universität im rechten
-      Fenster. Die Haushaltspläne der Universitäten enthalten alle Einnahmen und
-      Ausgaben der jeweiligen Universität.
-    </p>
+    <div v-if="!uzl & !euf & !cau">
+      <h1>Was ist ein Haushaltsplan?</h1>
+      <p>
+        Ein Haushaltsplan ist ein Plan, der bspw. vom Staat festlegt wird, und
+        darstellt wie viel Geld ausgegeben werden darf und wofür. Der
+        Haushaltsplan beinhaltet auch woher das Geld kommt, das ausgegeben wird.
+        Hierbei ist wichtig, dass es über Absichten und Erwartungen, nicht aber
+        über tatsächliche finanzwirtschaftliche Ergebnisse Auskunft gibt. Jede
+        Gemeine, jedes Land, der Bund und die EU stellen einen Haushaltsplan
+        zusammen. Sobald ein Haushaltsplan vom Gemeinderat oder Parlament
+        genehmigt wurde, wird dies auch als Haushaltsgesetz bezeichnet.
+      </p>
+      <p>
+        Diese Webseite wurde im Rahmen des Open Data Hackathons der UzL
+        entwickelt und betrachtet die öffentlich-zugänglichen Daten des
+        Ministeriums für Soziales, Gesundheit, Wissenschaft und Gleichstellung,
+        bzw. des Minesteriums für Bildung, Wissenschaft und Kulter. Im Fokus
+        sind die jeweiligen Einzelpläne 07 &10 der Ministerien der Jahre
+        2013-2019. Diese enthalten alle Einnahmen und Ausgaben der jeweiligen
+        Universitäten. Die Webseite soll dazu dienen, die Ausgaben und Einnahmen
+        verschiedener Universitäten zu vergleichen und anhand einzelner
+        Positionen aufzuschlüsseln. Um Daten für die Universität zu Lübeck,
+        Universität Kiel oder für die Europauniversität Flensburg zu sehen,
+        wählen Sie bitte das entsprechende Icon für die jeweilige Universität im
+        rechten Fenster.
+      </p>
+      <p>
+        (Bitte beachten Sie: Die Daten sind aufgrund fehlender Einträge in den
+        Einzelplänen tlws. prognostiziert)
+      </p>
+    </div>
 
     <div class=".d-flex">
       <button
