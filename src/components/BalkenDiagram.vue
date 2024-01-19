@@ -265,13 +265,13 @@ export default {
         datasets: [
           {
             label: "Gesamtausgaben UZL",
-            backgroundColor: "#4AD66D",
+            backgroundColor: "#00A6FB",
             data: uzlGA,
           },
 
           {
             label: "Gesamtausgaben EUF",
-            backgroundColor: "#4AD66D",
+            backgroundColor: "#E87D2A",
             data: eufGA,
           },
 
@@ -283,13 +283,13 @@ export default {
 
           {
             label: "Personalausgaben UZL",
-            backgroundColor: "#4AD66D",
+            backgroundColor: "#00A6FB",
             data: uzlPA,
           },
 
           {
             label: "Personalausgaben EUF",
-            backgroundColor: "#4AD66D",
+            backgroundColor: "#E87D2A",
             data: eufPA,
           },
 
@@ -301,13 +301,13 @@ export default {
 
           {
             label: "Drittmittel UZL",
-            backgroundColor: "#4AD66D",
+            backgroundColor: "#00A6FB",
             data: uzlD,
           },
 
           {
             label: "Drittmittel EUF",
-            backgroundColor: "#4AD66D",
+            backgroundColor: "#E87D2A",
             data: eufD,
           },
 
@@ -319,13 +319,13 @@ export default {
 
           {
             label: "Studianzahl UZL",
-            backgroundColor: "#4AD66D",
+            backgroundColor: "#00A6FB",
             data: uzlS,
           },
 
           {
             label: "Studianzahl EUF",
-            backgroundColor: "#4AD66D",
+            backgroundColor: "#E87D2A",
             data: eufS,
           },
 
