@@ -352,10 +352,12 @@ export default {
 #container {
   display: flex;
   flex-direction: column;
-  background-color: rgb(191, 131, 223);
+  background-color: #decdfa;
   width: 35%;
   padding: 2rem;
   margin: 1rem;
+  border-radius: 5px;
+  border: 1px solid black;
 }
 
 .circles {

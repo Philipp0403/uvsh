@@ -16,10 +16,15 @@ export default {
 <style scoped>
 #colouredBox {
   display: flex;
-  background-color: black;
+  background-color: #AC8BEE;
   height: 5%;
   width: 100%;
   align-items: center;
   justify-content: space-evenly;
+}
+
+a {
+  font-size: 1em;
+  color: black;
 }
 </style>
