@@ -315,19 +315,19 @@ export default {
           },
 
           {
-            label: "Studienanzahl UZL",
+            label: "Studianzahl UZL",
             backgroundColor: "#4AD66D",
             data: uzlS,
           },
 
           {
-            label: "Studienanzahl EUF",
+            label: "Studianzahl EUF",
             backgroundColor: "#4AD66D",
             data: eufS,
           },
 
           {
-            label: "Studienanzahl CAU",
+            label: "Studianzahl CAU",
             backgroundColor: "#4AD66D",
             data: cauS,
           },

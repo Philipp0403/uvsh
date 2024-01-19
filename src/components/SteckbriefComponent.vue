@@ -304,7 +304,7 @@
         Haushaltsplan beinhaltet auch woher das Geld kommt, das ausgegeben wird.
         Hierbei ist wichtig, dass es über Absichten und Erwartungen, nicht aber
         über tatsächliche finanzwirtschaftliche Ergebnisse Auskunft gibt. Jede
-        Gemeine, jedes Land, der Bund und die EU stellen einen Haushaltsplan
+        Gemeinde, jedes Land, der Bund und die EU stellen einen Haushaltsplan
         zusammen. Sobald ein Haushaltsplan vom Gemeinderat oder Parlament
         genehmigt wurde, wird dies auch als Haushaltsgesetz bezeichnet.
       </p>
@@ -312,8 +312,8 @@
         Diese Webseite wurde im Rahmen des Open Data Hackathons der UzL
         entwickelt und betrachtet die öffentlich-zugänglichen Daten des
         Ministeriums für Soziales, Gesundheit, Wissenschaft und Gleichstellung,
-        bzw. des Minesteriums für Bildung, Wissenschaft und Kulter. Im Fokus
-        sind die jeweiligen Einzelpläne 07 &10 der Ministerien der Jahre
+        bzw. des Ministeriums für Bildung, Wissenschaft und Kultur. Im Fokus
+        sind die jeweiligen Einzelpläne 07 & 10 der Ministerien der Jahre
         2013-2019. Diese enthalten alle Einnahmen und Ausgaben der jeweiligen
         Universitäten. Die Webseite soll dazu dienen, die Ausgaben und Einnahmen
         verschiedener Universitäten zu vergleichen und anhand einzelner
