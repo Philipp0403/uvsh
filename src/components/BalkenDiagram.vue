@@ -24,7 +24,7 @@
         :options="options"
         :data="balkenData"
       />
-      <Line v-if="!balken" :options="options" :data="balkenData" />
+      <Line v-if="!balken" :options="options" :data="lineData" />
     </div>
   </div>
 </template>
@@ -42,7 +42,7 @@ import {
   PointElement,
   LineElement,
 } from "chart.js";
-import { uzlEinnahmen, eufEinnahmen } from "../data/alldata.js";
+import { uzlLzB, eufLzB } from "../data/alldata.js";
 
 ChartJS.register(
   Title,
@@ -78,7 +78,7 @@ export default {
           {
             label: "Landeszuschuss zu Betriebskosten",
             backgroundColor: "#4AD66D",
-            data: [uzlEinnahmen[this.$store.state.jahr], 20, 10],
+            data: [uzlLzB[this.$store.state.jahr], 20, 10],
           },
           {
             label: "Zuschüsse zur Finanzierung von Investitionen",
@@ -135,53 +135,62 @@ export default {
           {
             label: "Landeszuschuss zu Betriebskosten",
             backgroundColor: "#4AD66D",
-            uzldata: uzlEinnahmen,
-            eufdata: eufEinnahmen,
+            uzldata: uzlLzB,
+            eufdata: eufLzB,
           },
           {
             label: "Zuschüsse zur Finanzierung von Investitionen",
             backgroundColor: "#25A244",
-            data: [30, 20, 10],
+            uzldata: uzlLzB,
+            eufdata: eufLzB,
           },
           {
             label: "Drittmittel",
             backgroundColor: "#1A7431",
-            data: [30, 20, 80],
+            uzldata: uzlLzB,
+            eufdata: eufLzB,
           },
           {
             label: "Sonstige Einnahmen",
             backgroundColor: "#00A6FB",
-            data: [30, 20, 10],
+            uzldata: uzlLzB,
+            eufdata: eufLzB,
           },
           {
             label: "Nicht genauer spezifizierte Einnahmen",
             backgroundColor: "#006494",
-            data: [30, 20, 10],
+            uzldata: uzlLzB,
+            eufdata: eufLzB,
           },
           {
             label: "Gesamt",
             backgroundColor: "#003554",
-            data: [0, 20, 80],
+            uzldata: uzlLzB,
+            eufdata: eufLzB,
           },
           {
             label: "Sachausgaben",
             backgroundColor: "#E87D2A",
-            data: [30, 20, 10],
+            uzldata: uzlLzB,
+            eufdata: eufLzB,
           },
           {
             label: "Personalausgaben",
             backgroundColor: "#DE6D17",
-            data: [30, 20, 80],
+            uzldata: uzlLzB,
+            eufdata: eufLzB,
           },
           {
             label: "Nicht genauer spezifizierte Ausgaben",
             backgroundColor: "#EF2B2B",
-            data: [30, 20, 10],
+            uzldata: uzlLzB,
+            eufdata: eufLzB,
           },
           {
             label: "Gesamtsumme",
             backgroundColor: "#CD0000",
-            data: [30, 20, 10],
+            uzldata: uzlLzB,
+            eufdata: eufLzB,
           },
         ],
       };
