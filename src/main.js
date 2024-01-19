@@ -6,9 +6,9 @@ import { createStore } from "vuex";
 const store = createStore({
   state() {
     return {
-      uzl: 0,
-      cau: 0,
-      euf: 0,
+      uzl: 1,
+      cau: 1,
+      euf: 1,
       jahr: 0,
     };
   },
