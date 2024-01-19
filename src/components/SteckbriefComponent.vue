@@ -399,8 +399,8 @@ export default {
   display: flex;
   flex-direction: column;
   background-color: rgb(191, 131, 223);
-  width: 30%;
-  padding: 1rem;
+  width: 35%;
+  padding: 2rem;
   margin: 1rem;
 }
 

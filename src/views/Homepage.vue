@@ -29,10 +29,11 @@ export default {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: 100vh;
-  padding: 1rem;
+  height: 100%;
+  /* padding: 1rem; */
 }
 .content {
   display: flex;
+  height: 80%;
 }
 </style>
