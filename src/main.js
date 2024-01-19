@@ -9,6 +9,7 @@ const store = createStore({
       uzl: 0,
       cau: 0,
       euf: 0,
+      jahr: 0,
     };
   },
   mutations: {
@@ -34,6 +35,9 @@ const store = createStore({
         state.euf = 1;
       }
     },
+    setJahr(state, value){
+      state.jahr = value;
+    }
   },
 });
 
