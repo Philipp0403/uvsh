@@ -327,81 +327,13 @@
         Einzelplänen tlws. prognostiziert)
       </p>
     </div>
-
-    <div class=".d-flex">
-      <button
-        v-on:click="changeUzl()"
-        type="button"
-        class="btn btn-outline-primary .btn-lg"
-        id="btnUZL"
-      >
-        UzL
-      </button>
-      <button
-        v-on:click="changeEUF()"
-        type="button"
-        class="btn btn-outline-primary"
-        id="btnEUF"
-      >
-        EUF
-      </button>
-      <button
-        v-on:click="changeCAU()"
-        type="button"
-        class="btn btn-outline-primary"
-        id="btnCAU"
-      >
-        CAU
-      </button>
-    </div>
   </div>
 </template>
 
 <script>
 export default {
   name: "SteckbriefComponent",
-  methods: {
-    changeUzl() {
-      this.$store.commit("toggleUzl");
-      // Toggle Color
-      // document.getElementById("btnUZL").style.backgroundColor == "red"? document.getElementById("btnUZL").style.backgroundColor = "blue":document.getElementById("btnUZL").style.backgroundColor="red"
-      if (this.uzl) {
-        document
-          .getElementById("btnUZL")
-          .classList.remove("btn-outline-primary");
-        document.getElementById("btnUZL").classList.add("btn-primary");
-      } else {
-        document.getElementById("btnUZL").classList.remove("btn-primary");
-        document.getElementById("btnUZL").classList.add("btn-outline-primary");
-      }
-    },
-    changeCAU() {
-      this.$store.commit("toggleCau");
-
-      if (this.cau) {
-        document
-          .getElementById("btnCAU")
-          .classList.remove("btn-outline-primary");
-        document.getElementById("btnCAU").classList.add("btn-primary");
-      } else {
-        document.getElementById("btnCAU").classList.remove("btn-primary");
-        document.getElementById("btnCAU").classList.add("btn-outline-primary");
-      }
-    },
-    changeEUF() {
-      this.$store.commit("toggleEuf");
-
-      if (this.euf) {
-        document
-          .getElementById("btnEUF")
-          .classList.remove("btn-outline-primary");
-        document.getElementById("btnEUF").classList.add("btn-primary");
-      } else {
-        document.getElementById("btnEUF").classList.remove("btn-primary");
-        document.getElementById("btnEUF").classList.add("btn-outline-primary");
-      }
-    },
-  },
+  methods: {},
   computed: {
     uzl() {
       return this.$store.state.uzl;

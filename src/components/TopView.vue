@@ -8,7 +8,7 @@
           width="50"
           class="d-inline-block align-items-center"
         />
-        Vergleich Universitäten
+        Wer haushaltet am besten? Unis im Vergleich.
       </a>
     </div>
   </nav>

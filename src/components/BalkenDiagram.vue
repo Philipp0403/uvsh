@@ -1,24 +1,61 @@
 <template>
   <div id="container">
-    <div id="zeitunddrop">
-      <div @click="balken = !balken" id="diagrammwahl">{{ diagrammtyp }}</div>
-      <div class="dropdown" v-if="balken">
-        <div>
-          <div id="currentYear" @click="dropDownOpen = !dropDownOpen">
-            {{ jahr }}
-          </div>
-          <div class="dropdown-options" v-show="dropDownOpen">
-            <div
-              v-for="aktuellesJahr in andereJahre"
-              :key="aktuellesJahr"
-              @click="selectYear(aktuellesJahr)"
-            >
-              {{ aktuellesJahr }}
+    <div id="zeitundtoggle">
+      <div id="zeitunddrop">
+        <button
+          v-on:click="balken = !balken"
+          type="button"
+          class="btn btn-outline-primary .btn-lg"
+          id="diagrammwahl"
+        >
+          {{ diagrammtyp }}
+        </button>
+
+        <div class="dropdown" v-if="balken">
+          <div>
+            <div id="currentYear" @click="dropDownOpen = !dropDownOpen">
+              {{ jahr }}
+            </div>
+            <div class="dropdown-options" v-show="dropDownOpen">
+              <div
+                v-for="aktuellesJahr in andereJahre"
+                :key="aktuellesJahr"
+                @click="selectYear(aktuellesJahr)"
+              >
+                {{ aktuellesJahr }}
+              </div>
             </div>
           </div>
         </div>
       </div>
+      <div class=".d-flex" id="unibuttons">
+        <button
+          v-on:click="changeUzl()"
+          type="button"
+          class="btn btn-outline-primary .btn-lg"
+          id="btnUZL"
+        >
+          UzL
+        </button>
+        <button
+          v-on:click="changeEUF()"
+          type="button"
+          class="btn btn-outline-primary"
+          id="btnEUF"
+        >
+          EUF
+        </button>
+        <button
+          v-on:click="changeCAU()"
+          type="button"
+          class="btn btn-outline-primary"
+          id="btnCAU"
+        >
+          CAU
+        </button>
+      </div>
     </div>
+
     <div id="diagramme">
       <Bar
         v-if="balken"
@@ -112,6 +149,15 @@ export default {
   computed: {
     diagrammtyp() {
       return this.balken ? "Zum Zeitverlauf" : "Zum Balkendiagramm";
+    },
+    uzl() {
+      return this.$store.state.uzl;
+    },
+    cau() {
+      return this.$store.state.cau;
+    },
+    euf() {
+      return this.$store.state.euf;
     },
     balkenData() {
       return {
@@ -299,6 +345,46 @@ export default {
       this.$store.commit("setJahr", this.jahre.indexOf(jahr));
       console.log(this.$store.state.jahr);
     },
+    changeUzl() {
+      this.$store.commit("toggleUzl");
+      // Toggle Color
+      // document.getElementById("btnUZL").style.backgroundColor == "red"? document.getElementById("btnUZL").style.backgroundColor = "blue":document.getElementById("btnUZL").style.backgroundColor="red"
+      if (this.uzl) {
+        document
+          .getElementById("btnUZL")
+          .classList.remove("btn-outline-primary");
+        document.getElementById("btnUZL").classList.add("btn-primary");
+      } else {
+        document.getElementById("btnUZL").classList.remove("btn-primary");
+        document.getElementById("btnUZL").classList.add("btn-outline-primary");
+      }
+    },
+    changeCAU() {
+      this.$store.commit("toggleCau");
+
+      if (this.cau) {
+        document
+          .getElementById("btnCAU")
+          .classList.remove("btn-outline-primary");
+        document.getElementById("btnCAU").classList.add("btn-primary");
+      } else {
+        document.getElementById("btnCAU").classList.remove("btn-primary");
+        document.getElementById("btnCAU").classList.add("btn-outline-primary");
+      }
+    },
+    changeEUF() {
+      this.$store.commit("toggleEuf");
+
+      if (this.euf) {
+        document
+          .getElementById("btnEUF")
+          .classList.remove("btn-outline-primary");
+        document.getElementById("btnEUF").classList.add("btn-primary");
+      } else {
+        document.getElementById("btnEUF").classList.remove("btn-primary");
+        document.getElementById("btnEUF").classList.add("btn-outline-primary");
+      }
+    },
   },
 };
 </script>
@@ -314,7 +400,6 @@ export default {
 
 .dropdown {
   position: relative;
-  width: 10%;
 }
 
 .dropdown-options {
@@ -323,12 +408,19 @@ export default {
   border: 1px solid #ddd;
   background-color: #fff;
   width: 100%;
+  border-radius: 5px;
 }
 
 #currentYear {
   padding: 5px 12px;
   border: 1px solid #ddd;
   background-color: #fff;
+  border-radius: 5px;
+}
+
+#currentYear:hover {
+  background-color: #eee;
+  cursor: pointer;
 }
 
 .dropdown-options > div {
@@ -345,7 +437,6 @@ export default {
   width: 58%;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   margin: 1rem;
 }
 
@@ -354,12 +445,20 @@ export default {
 }
 
 #diagrammwahl {
-  border: solid 1px black;
-  padding-left: 4px;
+  margin-right: 5px;
 }
 
-#diagrammwahl:hover {
-  background-color: #eee;
-  cursor: pointer;
+#zeitundtoggle {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
+
+#zeitunddrop {
+  display: flex;
+}
+
+#unibuttons > button {
+  margin-left: 5px;
 }
 </style>
