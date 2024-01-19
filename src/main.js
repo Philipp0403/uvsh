@@ -27,7 +27,12 @@ const store = createStore({
       }
     },
     toggleEuf(state) {
-      state.euf == 0 ? 1 : 0;
+      // state.euf == 0 ? 1 : 0;
+      if (state.euf != 0) {
+        state.euf = 0;
+      } else {
+        state.euf = 1;
+      }
     },
   },
 });
