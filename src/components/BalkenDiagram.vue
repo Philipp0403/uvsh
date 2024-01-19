@@ -42,7 +42,9 @@ import {
   PointElement,
   LineElement,
 } from "chart.js";
-import { uzlLzB } from "../data/alldata.js";
+import { uzlLzB, eufLzB, cauLzB, uzlZI, eufZI, cauZI, uzlD, eufD, cauD, uzlSE, eufSE, cauSE,
+    uzlNSE, eufNSE, cauNSE, uzlGE, eufGE, cauGE, uzlSA, eufSA, cauSA, uzlPA, eufPA, cauPA,
+    uzlNSA, eufNSA, cauNSA, uzlGA, eufGA, cauGA, uzlS, eufS, cauS } from "../data/alldata.js";
 
 ChartJS.register(
   Title,
@@ -78,52 +80,52 @@ export default {
           {
             label: "Landeszuschuss zu Betriebskosten",
             backgroundColor: "#4AD66D",
-            data: [uzlLzB[this.$store.state.jahr], 20, 10],
+            data: [uzlLzB[this.$store.state.jahr], eufLzB[this.$store.state.jahr], cauLzB[this.$store.state.jahr]],
           },
           {
             label: "Zuschüsse zur Finanzierung von Investitionen",
             backgroundColor: "#25A244",
-            data: [30, 20, 10],
+            data: [uzlZI[this.$store.state.jahr], eufZI[this.$store.state.jahr], cauZI[this.$store.state.jahr]],
           },
           {
             label: "Drittmittel",
             backgroundColor: "#1A7431",
-            data: [30, 20, 80],
+            data: [uzlD[this.$store.state.jahr], eufD[this.$store.state.jahr], cauD[this.$store.state.jahr]],
           },
           {
             label: "Sonstige Einnahmen",
             backgroundColor: "#00A6FB",
-            data: [30, 20, 10],
+            data: [uzlSE[this.$store.state.jahr], eufSE[this.$store.state.jahr], cauSE[this.$store.state.jahr]],
           },
           {
             label: "Nicht genauer spezifizierte Einnahmen",
             backgroundColor: "#006494",
-            data: [30, 20, 10],
+            data: [uzlNSE[this.$store.state.jahr], eufNSE[this.$store.state.jahr], cauNSE[this.$store.state.jahr]],
           },
           {
             label: "Gesamt",
             backgroundColor: "#003554",
-            data: [0, 20, 80],
+            data: [uzlGE[this.$store.state.jahr], eufGE[this.$store.state.jahr], cauGE[this.$store.state.jahr]],
           },
           {
             label: "Sachausgaben",
             backgroundColor: "#E87D2A",
-            data: [30, 20, 10],
+            data: [uzlSA[this.$store.state.jahr], eufSA[this.$store.state.jahr], cauSA[this.$store.state.jahr]],
           },
           {
             label: "Personalausgaben",
             backgroundColor: "#DE6D17",
-            data: [30, 20, 80],
+            data: [uzlPA[this.$store.state.jahr], eufPA[this.$store.state.jahr], cauPA[this.$store.state.jahr]],
           },
           {
             label: "Nicht genauer spezifizierte Ausgaben",
             backgroundColor: "#EF2B2B",
-            data: [30, 20, 10],
+            data: [uzlNSA[this.$store.state.jahr], eufNSA[this.$store.state.jahr], cauNSA[this.$store.state.jahr]],
           },
           {
             label: "Gesamtsumme",
             backgroundColor: "#CD0000",
-            data: [30, 20, 10],
+            data: [uzlGA[this.$store.state.jahr], eufGA[this.$store.state.jahr], cauGA[this.$store.state.jahr]],
           },
         ],
       };
@@ -133,61 +135,78 @@ export default {
         labels: ["2011", "2012", "2013", "2014", "2015", "2016", "2017"],
         datasets: [
           {
-            label: "Landeszuschuss zu Betriebskosten UZL",
+            label: "Gesamtausgaben UZL",
             backgroundColor: "#4AD66D",
-            data: uzlLzB,
+            data: uzlGA,
           },
 
           {
-            label: "Landeszuschuss zu Betriebskosten EUF",
+            label: "Gesamtausgaben EUF",
             backgroundColor: "#4AD66D",
-            data: uzlLzB,
+            data: eufGA,
           },
+
           {
-            label: "Zuschüsse zur Finanzierung von Investitionen",
-            backgroundColor: "#25A244",
-            data: uzlLzB,
+            label: "Gesamtausgaben CAU",
+            backgroundColor: "#4AD66D",
+            data: cauGA,
           },
+
           {
-            label: "Drittmittel",
-            backgroundColor: "#1A7431",
-            data: uzlLzB,
+            label: "Personalausgaben UZL",
+            backgroundColor: "#4AD66D",
+            data: uzlPA,
           },
+
           {
-            label: "Sonstige Einnahmen",
-            backgroundColor: "#00A6FB",
-            data: uzlLzB,
+            label: "Personalausgaben EUF",
+            backgroundColor: "#4AD66D",
+            data: eufPA,
           },
+
           {
-            label: "Nicht genauer spezifizierte Einnahmen",
-            backgroundColor: "#006494",
-            data: uzlLzB,
+            label: "Personalausgaben CAU",
+            backgroundColor: "#4AD66D",
+            data: cauPA,
           },
+
           {
-            label: "Gesamt",
-            backgroundColor: "#003554",
-            data: uzlLzB,
+            label: "Drittmittel UZL",
+            backgroundColor: "#4AD66D",
+            data: uzlD,
           },
+
           {
-            label: "Sachausgaben",
-            backgroundColor: "#E87D2A",
-            data: uzlLzB,
+            label: "Drittmittel EUF",
+            backgroundColor: "#4AD66D",
+            data: eufD,
           },
+
           {
-            label: "Personalausgaben",
-            backgroundColor: "#DE6D17",
-            data: uzlLzB,
+            label: "Drittmittel CAU",
+            backgroundColor: "#4AD66D",
+            data: cauD,
           },
+
           {
-            label: "Nicht genauer spezifizierte Ausgaben",
-            backgroundColor: "#EF2B2B",
-            data: uzlLzB,
+            label: "Studienanzahl UZL",
+            backgroundColor: "#4AD66D",
+            data: uzlS,
           },
+
           {
-            label: "Gesamtsumme",
-            backgroundColor: "#CD0000",
-            data: uzlLzB,
+            label: "Studienanzahl EUF",
+            backgroundColor: "#4AD66D",
+            data: eufS,
           },
+
+          {
+            label: "Studienanzahl CAU",
+            backgroundColor: "#4AD66D",
+            data: cauS,
+          }
+
+          ,
         ],
       };
     },
