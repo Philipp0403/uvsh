@@ -42,7 +42,7 @@ import {
   PointElement,
   LineElement,
 } from "chart.js";
-import { uzlLzB, eufLzB } from "../data/alldata.js";
+import { uzlLzB } from "../data/alldata.js";
 
 ChartJS.register(
   Title,
@@ -133,64 +133,60 @@ export default {
         labels: ["2011", "2012", "2013", "2014", "2015", "2016", "2017"],
         datasets: [
           {
-            label: "Landeszuschuss zu Betriebskosten",
+            label: "Landeszuschuss zu Betriebskosten UZL",
             backgroundColor: "#4AD66D",
-            uzldata: uzlLzB,
-            eufdata: eufLzB,
+            data: uzlLzB,
+          },
+
+          {
+            label: "Landeszuschuss zu Betriebskosten EUF",
+            backgroundColor: "#4AD66D",
+            data: uzlLzB,
           },
           {
             label: "Zuschüsse zur Finanzierung von Investitionen",
             backgroundColor: "#25A244",
-            uzldata: uzlLzB,
-            eufdata: eufLzB,
+            data: uzlLzB,
           },
           {
             label: "Drittmittel",
             backgroundColor: "#1A7431",
-            uzldata: uzlLzB,
-            eufdata: eufLzB,
+            data: uzlLzB,
           },
           {
             label: "Sonstige Einnahmen",
             backgroundColor: "#00A6FB",
-            uzldata: uzlLzB,
-            eufdata: eufLzB,
+            data: uzlLzB,
           },
           {
             label: "Nicht genauer spezifizierte Einnahmen",
             backgroundColor: "#006494",
-            uzldata: uzlLzB,
-            eufdata: eufLzB,
+            data: uzlLzB,
           },
           {
             label: "Gesamt",
             backgroundColor: "#003554",
-            uzldata: uzlLzB,
-            eufdata: eufLzB,
+            data: uzlLzB,
           },
           {
             label: "Sachausgaben",
             backgroundColor: "#E87D2A",
-            uzldata: uzlLzB,
-            eufdata: eufLzB,
+            data: uzlLzB,
           },
           {
             label: "Personalausgaben",
             backgroundColor: "#DE6D17",
-            uzldata: uzlLzB,
-            eufdata: eufLzB,
+            data: uzlLzB,
           },
           {
             label: "Nicht genauer spezifizierte Ausgaben",
             backgroundColor: "#EF2B2B",
-            uzldata: uzlLzB,
-            eufdata: eufLzB,
+            data: uzlLzB,
           },
           {
             label: "Gesamtsumme",
             backgroundColor: "#CD0000",
-            uzldata: uzlLzB,
-            eufdata: eufLzB,
+            data: uzlLzB,
           },
         ],
       };
