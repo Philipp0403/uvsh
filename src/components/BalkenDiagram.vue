@@ -64,7 +64,7 @@ export default {
     selectYear(jahr) {
       this.jahr = jahr;
       this.dropDownOpen = false;
-      this.$store.commit("setJahr(this.jahre.indexOf({}, jahr))");
+      this.$store.commit("setJahr", this.jahre.indexOf(jahr));
       console.log(this.$store.state.jahr);
     },
   },
