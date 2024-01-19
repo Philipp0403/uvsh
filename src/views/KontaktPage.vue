@@ -2,7 +2,14 @@
     <div class="wrapper">
       <TopView></TopView>
       <div class="content">
-  
+        <h5>Kontakt:</h5>
+      <p>Telefon: 01234-789456</p>
+      <p>Fax: 1234-56789</p>
+      <p>E-Mail: max@muster.de</p>
+      <p>Angaben gemäß § 5 TMG</p>
+      <p>Max Muster</p>
+      <p>Musterweg</p>
+      <p>12345 Musterstadt</p>
       </div>
       <FooterComponent></FooterComponent>
     </div>
@@ -29,6 +36,7 @@
   }
   .content {
     display: flex;
+    flex-direction: column;
     height: 80%;
   }
   </style>
