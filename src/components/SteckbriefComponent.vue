@@ -358,6 +358,7 @@ export default {
   margin: 1rem;
   border-radius: 5px;
   border: 1px solid black;
+  overflow:auto;
 }
 
 .circles {

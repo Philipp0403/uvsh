@@ -130,6 +130,8 @@ ChartJS.register(
 );
 
 var uzlData = [];
+var cauData = [];
+var eufData = [];
 
 export default {
   name: "BalkenDiagram",
@@ -381,59 +383,59 @@ export default {
     },
     changeCAU() {
       this.$store.commit("toggleCau");
-
+      const ChartInstance = this.$refs.bar.chart;
       if (this.cau) {
-        document
-          .getElementById("btnCAU")
-          .classList.remove("btn-outline-primary");
+        document.getElementById("btnCAU").classList.remove("btn-outline-primary");
         document.getElementById("btnCAU").classList.add("btn-primary");
+        if (this.balken) {
+          for (var i = 0; i < this.balkenData.datasets.length; i++) {
+            this.balkenData.datasets[i].data.push(cauData[i]);
+          }
+          this.balkenData.labels.push("CAU");
+          cauData = [];
+          ChartInstance.update();
+        }
       } else {
         document.getElementById("btnCAU").classList.remove("btn-primary");
         document.getElementById("btnCAU").classList.add("btn-outline-primary");
         if (this.balken) {
-          for (var i = 0; i < this.balkenData.datasets.length; i++) {
-            this.balkenData.datasets[i].data.splice(
-              this.balkenData.labels.indexOf("CAU"),
-              1
-            );
+          var cauIndex = this.balkenData.labels.indexOf("CAU");
+          for (i = 0; i < this.balkenData.datasets.length; i++) {
+            cauData.push(this.balkenData.datasets[i].data[cauIndex]);
+            this.balkenData.datasets[i].data.splice(cauIndex, 1);
           }
-          this.balkenData.labels.splice(
-            this.balkenData.labels.indexOf("CAU"),
-            1
-          );
-          const ChartInstance = this.$refs.bar.chart;
+          this.balkenData.labels.splice(cauIndex, 1);
           ChartInstance.update();
+          console.log(cauData);
         }
       }
     },
     changeEUF() {
       this.$store.commit("toggleEuf");
-
+      const ChartInstance = this.$refs.bar.chart;
       if (this.euf) {
-        document
-          .getElementById("btnEUF")
-          .classList.remove("btn-outline-primary");
+        document.getElementById("btnEUF").classList.remove("btn-outline-primary");
         document.getElementById("btnEUF").classList.add("btn-primary");
+        if (this.balken) {
+          for (var i = 0; i < this.balkenData.datasets.length; i++) {
+            this.balkenData.datasets[i].data.push(eufData[i]);
+          }
+          this.balkenData.labels.push("EUF");
+          eufData = [];
+          ChartInstance.update();
+        }
       } else {
         document.getElementById("btnEUF").classList.remove("btn-primary");
         document.getElementById("btnEUF").classList.add("btn-outline-primary");
         if (this.balken) {
-          for (var i = 0; i < this.balkenData.datasets.length; i++) {
-            this.balkenData.datasets[i].data.splice(
-              this.balkenData.labels.indexOf("EUF"),
-              1
-            );
+          var eufIndex = this.balkenData.labels.indexOf("EUF");
+          for (i = 0; i < this.balkenData.datasets.length; i++) {
+            eufData.push(this.balkenData.datasets[i].data[eufIndex]);
+            this.balkenData.datasets[i].data.splice(eufIndex, 1);
           }
-          this.balkenData.labels.splice(
-            this.balkenData.labels.indexOf("EUF"),
-            1
-          );
-          const ChartInstance = this.$refs.bar.chart;
+          this.balkenData.labels.splice(eufIndex, 1);
           ChartInstance.update();
-        } else {
-          for (i = 0; i < this.lineData.datasets.length; i++) {
-            this.lineData.datasets;
-          }
+          console.log(eufData);
         }
       }
     },
